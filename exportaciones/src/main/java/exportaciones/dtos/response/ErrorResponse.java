@@ -1,12 +1,10 @@
-package aduanaDonPepe.importaciones.dtos.response;
-
-import lombok.Builder;
-import lombok.Data;
+package aduanaDonPepe.exportaciones.dtos.response;
 
 import java.time.LocalDateTime;
 import java.util.Map;
+import lombok.Builder;
+import lombok.Data;
 
-// DTO estándar para devolver errores al cliente
 @Data
 @Builder
 public class ErrorResponse {
@@ -17,6 +15,5 @@ public class ErrorResponse {
     private String message;
     private String path;
 
-    // Para errores de validación
     private Map<String, String> details;
 }
