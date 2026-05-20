@@ -1,4 +1,4 @@
-package mercancias.historial;
+package historial;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
