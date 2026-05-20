@@ -1,14 +1,12 @@
-package mercancias.importaciones.controllers;
+package aduanaDonPepe.importaciones.controllers;
 
 import jakarta.validation.Valid;
-import mercancias.importaciones.dtos.request.ImportacionRequest;
-import mercancias.importaciones.dtos.response.ImportacionResponse;
-import mercancias.importaciones.services.ImportacionService;
-
+import aduanaDonPepe.importaciones.dtos.request.ImportacionRequest;
+import aduanaDonPepe.importaciones.dtos.response.ImportacionResponse;
+import aduanaDonPepe.importaciones.services.ImportacionService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 
 @RestController
@@ -21,12 +19,14 @@ public class ImportacionController {
         this.importacionService = importacionService;
     }
 
+    // Lista todas las importaciones
     @GetMapping
     public ResponseEntity<List<ImportacionResponse>> obtenerTodas() {
 
         return ResponseEntity.ok(importacionService.obtenerTodas());
     }
 
+    // Busca importación por ID
     @GetMapping("/{id}")
     public ResponseEntity<ImportacionResponse> obtenerPorId(
             @PathVariable Long id
@@ -35,6 +35,7 @@ public class ImportacionController {
         return ResponseEntity.ok(importacionService.obtenerPorId(id));
     }
 
+    // Crea nueva importación
     @PostMapping
     public ResponseEntity<ImportacionResponse> guardar(
             @Valid @RequestBody ImportacionRequest request
@@ -45,6 +46,7 @@ public class ImportacionController {
                 .body(importacionService.guardar(request));
     }
 
+    // Actualiza importación
     @PutMapping("/{id}")
     public ResponseEntity<ImportacionResponse> actualizar(
             @PathVariable Long id,
@@ -56,6 +58,7 @@ public class ImportacionController {
         );
     }
 
+    // Elimina importación
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> eliminar(
             @PathVariable Long id

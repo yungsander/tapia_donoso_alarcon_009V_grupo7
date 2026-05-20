@@ -1,7 +1,7 @@
-package aduanaDonPepe.importaciones.clients;
+package aduanaDonPepe.exportaciones.clients;
 
-import aduanaDonPepe.importaciones.config.FeignConfig;
-import aduanaDonPepe.importaciones.dtos.response.MercanciaResponse;
+import aduanaDonPepe.exportaciones.config.FeignConfig;
+import aduanaDonPepe.exportaciones.dtos.response.MercanciaResponse;
 
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;

@@ -1,7 +1,7 @@
-package aduanaDonPepe.importaciones.exceptions;
+package aduanaDonPepe.exportaciones.exceptions;
 
 
-import aduanaDonPepe.importaciones.dtos.response.ErrorResponse;
+import aduanaDonPepe.exportaciones.dtos.response.ErrorResponse;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

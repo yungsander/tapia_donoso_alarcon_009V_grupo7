@@ -1,4 +1,4 @@
-package aduanaDonPepe.importaciones.config;
+package aduanaDonPepe.exportaciones.config;
 
 import feign.Logger;
 import feign.Request;

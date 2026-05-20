@@ -1,4 +1,4 @@
-package mercancias.importaciones.models;
+package aduanaDonPepe.importaciones.models;
 
 import jakarta.persistence.*;
 import lombok.Data;

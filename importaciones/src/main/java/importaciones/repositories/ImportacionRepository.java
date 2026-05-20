@@ -1,6 +1,6 @@
-package mercancias.importaciones.repositories;
+package aduanaDonPepe.importaciones.repositories;
 
-import mercancias.importaciones.models.ImportacionModel;
+import aduanaDonPepe.importaciones.models.ImportacionModel;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

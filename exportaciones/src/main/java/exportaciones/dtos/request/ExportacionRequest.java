@@ -1,19 +1,19 @@
-package aduanaDonPepe.importaciones.dtos.request;
+package aduanaDonPepe.exportaciones.dtos.request;
+
+import java.time.LocalDate;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.Data;
 
-import java.time.LocalDate;
-
 @Data
-public class ImportacionRequest {
+public class ExportacionRequest {
 
-    @NotNull(message = "La fecha de importación es obligatoria")
-    private LocalDate fechaImportacion;
+    @NotNull(message = "La fecha de exportación es obligatoria")
+    private LocalDate fechaExportacion;
 
-    @NotBlank(message = "El país de origen es obligatorio")
-    private String paisOrigen;
+    @NotBlank(message = "El país destino es obligatorio")
+    private String paisDestino;
 
     @NotBlank(message = "El estado es obligatorio")
     private String estado;

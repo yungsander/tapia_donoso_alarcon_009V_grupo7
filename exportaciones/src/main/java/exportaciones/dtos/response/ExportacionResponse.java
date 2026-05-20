@@ -1,22 +1,20 @@
-package aduanaDonPepe.importaciones.dtos.response;
+package aduanaDonPepe.exportaciones.dtos.response;
+
+import java.time.LocalDate;
 
 import lombok.Builder;
 import lombok.Data;
 
-import java.time.LocalDate;
-
 @Data
 @Builder
-public class ImportacionResponse {
+public class ExportacionResponse {
 
     private Long id;
-    private LocalDate fechaImportacion;
-    private String paisOrigen;
+    private LocalDate fechaExportacion;
+    private String paisDestino;
     private String estado;
     private Long idMercancia;
     private Double peso;
     private String tipoMercancia;
-
-    // Datos traídos desde Feign
     private MercanciaResponse mercancia;
 }

@@ -1,4 +1,4 @@
-package aduanaDonPepe.importaciones.exceptions;
+package aduanaDonPepe.exportaciones.exceptions;
 
 // Excepción para recursos que no existen
 public class NotFoundException extends RuntimeException {
