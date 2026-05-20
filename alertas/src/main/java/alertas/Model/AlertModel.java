@@ -14,7 +14,7 @@ public class AlertModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private String ID_Alerta;
+    private Long ID_Alerta;
 
     @Column(nullable = false, name="nombre_alarma")
     private String nombreAlarma;
