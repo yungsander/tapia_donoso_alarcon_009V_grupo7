@@ -1,4 +1,4 @@
-package mercancias.alertas.Config;
+package alertas.Config;
 
 import feign.Logger;
 import feign.Request;

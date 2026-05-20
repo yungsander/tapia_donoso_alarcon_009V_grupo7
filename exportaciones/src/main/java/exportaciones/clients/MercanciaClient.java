@@ -1,4 +1,4 @@
-package aduanaDonPepe.exportaciones.clients;
+package aduanaDonPepe.clients;
 
 import aduanaDonPepe.exportaciones.config.FeignConfig;
 import aduanaDonPepe.exportaciones.dtos.response.MercanciaResponse;

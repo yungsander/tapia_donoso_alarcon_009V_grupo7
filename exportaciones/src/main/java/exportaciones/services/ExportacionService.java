@@ -1,17 +1,17 @@
-package aduanaDonPepe.exportaciones.services;
+package aduanaDonPepe.services;
 
 import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import aduanaDonPepe.exportaciones.clients.MercanciaClient;
-import aduanaDonPepe.exportaciones.dtos.request.ExportacionRequest;
-import aduanaDonPepe.exportaciones.dtos.response.ExportacionResponse;
-import aduanaDonPepe.exportaciones.dtos.response.MercanciaResponse;
-import aduanaDonPepe.exportaciones.exceptions.NotFoundException;
-import aduanaDonPepe.exportaciones.exceptions.RemoteServiceException;
-import aduanaDonPepe.exportaciones.models.ExportacionModel;
-import aduanaDonPepe.exportaciones.repositories.ExportacionRepository;
+import aduanaDonPepe.clients.MercanciaClient;
+import aduanaDonPepe.dtos.request.ExportacionRequest;
+import aduanaDonPepe.dtos.response.ExportacionResponse;
+import aduanaDonPepe.dtos.response.MercanciaResponse;
+import aduanaDonPepe.exceptions.NotFoundException;
+import aduanaDonPepe.exceptions.RemoteServiceException;
+import aduanaDonPepe.models.ExportacionModel;
+import aduanaDonPepe.repositories.ExportacionRepository;
 
 import feign.FeignException;
 import jakarta.transaction.Transactional;

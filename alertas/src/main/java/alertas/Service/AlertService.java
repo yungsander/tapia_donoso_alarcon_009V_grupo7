@@ -1,7 +1,7 @@
-package mercancias.alertas.Service;
+package alertas.Service;
 
 import jakarta.transaction.Transactional;
-import mercancias.alertas.Repository.AlertRepository;
+import alertas.Repository.AlertRepository;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -9,5 +9,9 @@ import org.springframework.stereotype.Service;
 public class AlertService {
 
     private final AlertRepository alertRepo;
+
+    public AlertService(AlertRepository alertRepo) {
+        this.alertRepo = alertRepo;
+    }
 
 }
