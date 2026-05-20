@@ -1,10 +1,10 @@
-package mercancias.mercancias.services;
+package aduanaDonPepe.mercancias.services;
 
 import java.util.*;
 import org.springframework.stereotype.Service;
 import jakarta.transaction.Transactional;
-import mercancias.mercancias.models.MercanciaModels;
-import mercancias.mercancias.repositories.MercanciaRepository; 
+import aduanaDonPepe.mercancias.models.MercanciaModels;
+import aduanaDonPepe.mercancias.repositories.MercanciaRepository; 
 @Service
 @Transactional
 public class MercanciaService {

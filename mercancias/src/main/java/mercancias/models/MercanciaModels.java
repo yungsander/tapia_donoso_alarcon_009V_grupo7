@@ -1,4 +1,4 @@
-package mercancias.mercancias.models;
+package aduanaDonPepe.mercancias.models;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

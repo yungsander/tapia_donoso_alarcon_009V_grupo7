@@ -1,7 +1,7 @@
-package mercancias.mercancias.repositories;
+package aduanaDonPepe.mercancias.repositories;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import mercancias.mercancias.models.MercanciaModels;
+import aduanaDonPepe.mercancias.models.MercanciaModels;
 
 public interface MercanciaRepository extends JpaRepository<MercanciaModels, Long> {
 }

@@ -1,4 +1,4 @@
-package mercancias.alertas.dtos.request;
+package alertas.dtos.request;
 
 import lombok.Data;
 
