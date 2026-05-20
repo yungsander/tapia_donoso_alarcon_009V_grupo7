@@ -1,4 +1,4 @@
-package mercancias.mercancias.controllers;
+package aduanaDonPepe.mercancias.controllers;
 
 import java.util.List;
 
@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import mercancias.mercancias.models.MercanciaModels;
-import mercancias.mercancias.services.MercanciaService;
+import aduanaDonPepe.mercancias.models.MercanciaModels;
+import aduanaDonPepe.mercancias.services.MercanciaService;
 
 @RestController
 @RequestMapping("/api/v1/mercancia")

@@ -1,4 +1,4 @@
-package mercancias.alertas;
+package alertas;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

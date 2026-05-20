@@ -1,4 +1,4 @@
-package mercancias.alertas.Controller;
+package alertas.Controller;
 
 public class AlertController {
 

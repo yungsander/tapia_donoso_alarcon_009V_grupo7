@@ -1,4 +1,4 @@
-package mercancias.historial;
+package historial;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

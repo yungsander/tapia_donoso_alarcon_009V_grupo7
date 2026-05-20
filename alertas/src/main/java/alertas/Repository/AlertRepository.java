@@ -1,6 +1,6 @@
-package mercancias.alertas.Repository;
+package alertas.Repository;
 
-import mercancias.alertas.Model.AlertModel;
+import alertas.Model.AlertModel;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

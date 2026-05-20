@@ -1,4 +1,4 @@
-package mercancias.alertas.Model;
+package alertas.Model;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
