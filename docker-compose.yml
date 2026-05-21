@@ -26,7 +26,7 @@ services:
 
   paises:
     build:
-      context: ./aduanaDonPepe/paises/paises
+      context: ./paises
       dockerfile: Dockerfile
     container_name: ms-paises
     ports:
@@ -45,7 +45,7 @@ services:
 
   impuestos:
     build:
-      context: ./aduanaDonPepe/impuestos/impuestos
+      context: ./impuestos
       dockerfile: Dockerfile
     container_name: ms-impuestos
     ports:
@@ -64,7 +64,7 @@ services:
 
   usuarios:
     build:
-      context: ./aduanaDonPepe/usuarios/usuarios
+      context: ./usuarios
       dockerfile: Dockerfile
     container_name: ms-usuarios
     ports:
@@ -83,7 +83,7 @@ services:
 
   alertas:
     build:
-      context: ./aduanaDonPepe/alertas/alertas
+      context: ./alertas
       dockerfile: Dockerfile
     container_name: ms-alertas
     ports:
@@ -102,7 +102,7 @@ services:
 
   documentos:
     build:
-      context: ./aduanaDonPepe/documentos/documentos
+      context: ./documentos
       dockerfile: Dockerfile
     container_name: ms-documentos
     ports:
@@ -121,7 +121,7 @@ services:
 
   importaciones:
     build:
-      context: ./aduanaDonPepe/importaciones/importaciones
+      context: ./importaciones
       dockerfile: Dockerfile
     container_name: ms-importaciones
     ports:
@@ -140,7 +140,7 @@ services:
 
   exportaciones:
     build:
-      context: ./aduanaDonPepe/exportaciones/exportaciones
+      context: ./exportaciones
       dockerfile: Dockerfile
     container_name: ms-exportaciones
     ports:
@@ -159,7 +159,7 @@ services:
 
   mercancias:
     build:
-      context: ./aduanaDonPepe/mercancias/mercancias
+      context: ./mercancias
       dockerfile: Dockerfile
     container_name: ms-mercancias
     ports:
@@ -178,7 +178,7 @@ services:
 
   reportes:
     build:
-      context: ./aduanaDonPepe/reportes/reportes
+      context: ./reportes
       dockerfile: Dockerfile
     container_name: ms-reportes
     ports:
@@ -197,7 +197,7 @@ services:
 
   historial:
     build:
-      context: ./aduanaDonPepe/historial/historial
+      context: ./historial
       dockerfile: Dockerfile
     container_name: ms-historial
     ports:
