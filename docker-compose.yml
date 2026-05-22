@@ -24,70 +24,13 @@ services:
 
   # ── Microservicios ───────────────────────────────────────────────
 
-  paises:
-    build:
-      context: ./paises
-      dockerfile: Dockerfile
-    container_name: ms-paises
-    ports:
-      - "8081:8080"
-    environment:
-      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/db_paises?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true
-      SPRING_DATASOURCE_USERNAME: aduana
-      SPRING_DATASOURCE_PASSWORD: aduana123
-      SPRING_JPA_HIBERNATE_DDL_AUTO: update
-    depends_on:
-      mysql:
-        condition: service_healthy
-    networks:
-      - aduana-net
-    restart: unless-stopped
-
-  impuestos:
-    build:
-      context: ./impuestos
-      dockerfile: Dockerfile
-    container_name: ms-impuestos
-    ports:
-      - "8082:8080"
-    environment:
-      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/db_impuestos?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true
-      SPRING_DATASOURCE_USERNAME: aduana
-      SPRING_DATASOURCE_PASSWORD: aduana123
-      SPRING_JPA_HIBERNATE_DDL_AUTO: update
-    depends_on:
-      mysql:
-        condition: service_healthy
-    networks:
-      - aduana-net
-    restart: unless-stopped
-
-  usuarios:
-    build:
-      context: ./usuarios
-      dockerfile: Dockerfile
-    container_name: ms-usuarios
-    ports:
-      - "8083:8080"
-    environment:
-      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/db_usuarios?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true
-      SPRING_DATASOURCE_USERNAME: aduana
-      SPRING_DATASOURCE_PASSWORD: aduana123
-      SPRING_JPA_HIBERNATE_DDL_AUTO: update
-    depends_on:
-      mysql:
-        condition: service_healthy
-    networks:
-      - aduana-net
-    restart: unless-stopped
-
   alertas:
     build:
       context: ./alertas
       dockerfile: Dockerfile
     container_name: ms-alertas
     ports:
-      - "8084:8080"
+      - "8080:8080"
     environment:
       SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/db_alertas?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true
       SPRING_DATASOURCE_USERNAME: aduana
@@ -106,28 +49,9 @@ services:
       dockerfile: Dockerfile
     container_name: ms-documentos
     ports:
-      - "8085:8080"
+      - "8081:8080"
     environment:
       SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/db_documentos?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true
-      SPRING_DATASOURCE_USERNAME: aduana
-      SPRING_DATASOURCE_PASSWORD: aduana123
-      SPRING_JPA_HIBERNATE_DDL_AUTO: update
-    depends_on:
-      mysql:
-        condition: service_healthy
-    networks:
-      - aduana-net
-    restart: unless-stopped
-
-  importaciones:
-    build:
-      context: ./importaciones
-      dockerfile: Dockerfile
-    container_name: ms-importaciones
-    ports:
-      - "8086:8080"
-    environment:
-      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/db_importaciones?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true
       SPRING_DATASOURCE_USERNAME: aduana
       SPRING_DATASOURCE_PASSWORD: aduana123
       SPRING_JPA_HIBERNATE_DDL_AUTO: update
@@ -144,9 +68,66 @@ services:
       dockerfile: Dockerfile
     container_name: ms-exportaciones
     ports:
-      - "8087:8080"
+      - "8082:8080"
     environment:
       SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/db_exportaciones?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true
+      SPRING_DATASOURCE_USERNAME: aduana
+      SPRING_DATASOURCE_PASSWORD: aduana123
+      SPRING_JPA_HIBERNATE_DDL_AUTO: update
+    depends_on:
+      mysql:
+        condition: service_healthy
+    networks:
+      - aduana-net
+    restart: unless-stopped
+  
+  historial:
+    build:
+      context: ./historial
+      dockerfile: Dockerfile
+    container_name: ms-historial
+    ports:
+      - "8083:8080"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/db_historial?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true
+      SPRING_DATASOURCE_USERNAME: aduana
+      SPRING_DATASOURCE_PASSWORD: aduana123
+      SPRING_JPA_HIBERNATE_DDL_AUTO: update
+    depends_on:
+      mysql:
+        condition: service_healthy
+    networks:
+      - aduana-net
+    restart: unless-stopped
+  
+  importaciones:
+    build:
+      context: ./importaciones
+      dockerfile: Dockerfile
+    container_name: ms-importaciones
+    ports:
+      - "8084:8080"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/db_importaciones?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true
+      SPRING_DATASOURCE_USERNAME: aduana
+      SPRING_DATASOURCE_PASSWORD: aduana123
+      SPRING_JPA_HIBERNATE_DDL_AUTO: update
+    depends_on:
+      mysql:
+        condition: service_healthy
+    networks:
+      - aduana-net
+    restart: unless-stopped
+  
+  impuestos:
+    build:
+      context: ./impuestos
+      dockerfile: Dockerfile
+    container_name: ms-impuestos
+    ports:
+      - "8085:8080"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/db_impuestos?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true
       SPRING_DATASOURCE_USERNAME: aduana
       SPRING_DATASOURCE_PASSWORD: aduana123
       SPRING_JPA_HIBERNATE_DDL_AUTO: update
@@ -163,7 +144,7 @@ services:
       dockerfile: Dockerfile
     container_name: ms-mercancias
     ports:
-      - "8088:8080"
+      - "8086:8080"
     environment:
       SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/db_mercancias?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true
       SPRING_DATASOURCE_USERNAME: aduana
@@ -176,13 +157,32 @@ services:
       - aduana-net
     restart: unless-stopped
 
+  paises:
+    build:
+      context: ./paises
+      dockerfile: Dockerfile
+    container_name: ms-paises
+    ports:
+      - "8087:8080"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/db_paises?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true
+      SPRING_DATASOURCE_USERNAME: aduana
+      SPRING_DATASOURCE_PASSWORD: aduana123
+      SPRING_JPA_HIBERNATE_DDL_AUTO: update
+    depends_on:
+      mysql:
+        condition: service_healthy
+    networks:
+      - aduana-net
+    restart: unless-stopped
+  
   reportes:
     build:
       context: ./reportes
       dockerfile: Dockerfile
     container_name: ms-reportes
     ports:
-      - "8089:8080"
+      - "8088:8080"
     environment:
       SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/db_reportes?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true
       SPRING_DATASOURCE_USERNAME: aduana
@@ -195,15 +195,15 @@ services:
       - aduana-net
     restart: unless-stopped
 
-  historial:
+  usuarios:
     build:
-      context: ./historial
+      context: ./usuarios
       dockerfile: Dockerfile
-    container_name: ms-historial
+    container_name: ms-usuarios
     ports:
-      - "8090:8080"
+      - "8089:8080"
     environment:
-      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/db_historial?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/db_usuarios?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true
       SPRING_DATASOURCE_USERNAME: aduana
       SPRING_DATASOURCE_PASSWORD: aduana123
       SPRING_JPA_HIBERNATE_DDL_AUTO: update
@@ -213,6 +213,7 @@ services:
     networks:
       - aduana-net
     restart: unless-stopped
+
 
 # ── Volúmenes y red ───────────────────────────────────────────────
 volumes:
