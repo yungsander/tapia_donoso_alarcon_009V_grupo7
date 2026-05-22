@@ -4,6 +4,7 @@ import java.time.LocalDateTime;
 
 import lombok.Builder;
 import lombok.Data;
+import java.util.Map;
 
 @Data
 @Builder
@@ -14,5 +15,7 @@ public class ErrorResponse {
     private String error;
     private String message;
     private String path;
+
+    private Map<String, String> details;
     
 }

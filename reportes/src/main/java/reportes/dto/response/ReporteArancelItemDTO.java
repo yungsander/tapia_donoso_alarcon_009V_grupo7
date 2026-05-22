@@ -5,8 +5,8 @@ import lombok.Data;
 @Data
 public class ReporteArancelItemDTO {
 
-    private String numeroManifiesto;
-    private String agencia;
+    private Long numeroManifiesto;
+    private Integer agencia;
     private String totalPagado;
     
 }
