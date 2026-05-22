@@ -1,6 +1,8 @@
 package services;
 
 import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Service;
 
@@ -34,9 +36,33 @@ public class AlertService {
     // Lista todas las alertas
     public List<AlertResponse> obtenerTodas() {
 
-        return alertRepository.findAll()
-                .stream()
-                .map(this::mapToResponseConMercancia)
+        List<AlertModel> alertas = alertRepository.findAll();
+
+        if (alertas.isEmpty()) {
+            return List.of();
+        }
+
+        // Extraemos IDs únicos
+        List<Long> idsMercancias = alertas.stream()
+                .map(AlertModel::getIdMercancia)
+                .distinct()
+                .toList();
+        
+        // Obtenemos mercancías en lote
+        List<MercanciaResponse> mercancias;
+        try {
+            mercancias = mercanciaClient.obtenerMercanciasPorIds(idsMercancias);
+        } catch (FeignException e) {
+            throw new RemoteServiceException("Error al comunicarse con el microservicio de mercancias en lote");
+        }
+
+        // Creamos el mapa (Corregido: Collectors.toMap)
+        Map<Long, MercanciaResponse> mapaMercancias = mercancias.stream()
+                .collect(Collectors.toMap(MercanciaResponse::getId, m -> m));
+
+        // CORRECCIÓN: Faltaba retornar la lista mapeando las alertas con el mapa
+        return alertas.stream()
+                .map(alerta -> mapToResponse(alerta, mapaMercancias.get(alerta.getIdMercancia())))
                 .toList();
     }
 
@@ -58,52 +84,42 @@ public class AlertService {
         MercanciaResponse mercancia =
                 obtenerMercanciaDesdeServicio(request.getIdMercancia());
 
-        AlertModel alerta = new AlertModel();
+        AlertModel nuevaAlerta = new AlertModel();
 
-        alerta.setNombreAlerta(request.getNombreAlerta());
-        alerta.setMensajeAlerta(request.getMensajeAlerta());
-        alerta.setIdMercancia(request.getIdMercancia());
+        nuevaAlerta.setNombreAlerta(request.getNombreAlerta());
+        nuevaAlerta.setMensajeAlerta(request.getMensajeAlerta());
+        nuevaAlerta.setIdMercancia(request.getIdMercancia());
 
-        AlertModel guardada =
-                alertRepository.save(alerta);
+        AlertModel alertaGuardada = alertRepository.save(nuevaAlerta);
 
-        return mapToResponse(guardada, mercancia);
+        return mapToResponse(alertaGuardada, mercancia);
     }
 
     // Actualiza alerta
-    public AlertResponse actualizar(
-            Long id,
-            AlertRequest request
-    ) {
+    public AlertResponse actualizar(Long id, AlertRequest request) {
+        
+        // CORRECCIÓN: Se quitó el punto y coma (;) después de findById
+        AlertModel alertaExistente = alertRepository.findById(id)
+                .orElseThrow(() -> new NotFoundException("No existe la alerta con id: " + id));
+        
+        MercanciaResponse mercancia = obtenerMercanciaDesdeServicio(request.getIdMercancia());
 
-        AlertModel alerta =
-                alertRepository.findById(id)
-                        .orElseThrow(() ->
-                                new NotFoundException(
-                                        "No existe la alerta con id: " + id));
+        alertaExistente.setNombreAlerta(request.getNombreAlerta());
+        alertaExistente.setMensajeAlerta(request.getMensajeAlerta());
+        alertaExistente.setIdMercancia(request.getIdMercancia());
 
-        // Verifica mercancía
-        MercanciaResponse mercancia =
-                obtenerMercanciaDesdeServicio(request.getIdMercancia());
+        AlertModel alertaActualizada = alertRepository.save(alertaExistente);
 
-        alerta.setNombreAlerta(request.getNombreAlerta());
-        alerta.setMensajeAlerta(request.getMensajeAlerta());
-        alerta.setIdMercancia(request.getIdMercancia());
-
-        AlertModel actualizada =
-                alertRepository.save(alerta);
-
-        return mapToResponse(actualizada, mercancia);
+        return mapToResponse(alertaActualizada, mercancia);
     }
-
+            
     // Elimina alerta
     public void eliminar(Long id) {
 
-        AlertModel alerta =
-                alertRepository.findById(id)
-                        .orElseThrow(() ->
-                                new NotFoundException(
-                                        "No existe la alerta con id: " + id));
+        AlertModel alerta = alertRepository.findById(id)
+                .orElseThrow(() ->
+                        new NotFoundException(
+                                "No existe la alerta con id: " + id));
 
         alertRepository.delete(alerta);
     }
