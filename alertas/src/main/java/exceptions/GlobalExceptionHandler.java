@@ -1,6 +1,6 @@
-package alertas.exceptions;
+package exceptions;
 
-import alertas.dtos.response.ErrorResponse;
+import dtos.response.ErrorResponse;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

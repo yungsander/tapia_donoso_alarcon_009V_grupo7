@@ -1,4 +1,4 @@
-package alertas.exceptions;
+package exceptions;
 
 // Excepción para recursos que no existen
 public class NotFoundException extends RuntimeException {

@@ -1,7 +1,7 @@
-package alertas.clients;
+package clients;
 
-import alertas.config.FeignConfig;
-import alertas.dtos.response.MercanciaResponse;
+import config.FeignConfig;
+import dtos.response.MercanciaResponse;
 
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;

@@ -1,17 +1,17 @@
-package alertas.services;
+package services;
 
 import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import alertas.clients.MercanciaClient;
-import alertas.dtos.request.AlertRequest;
-import alertas.dtos.response.AlertResponse;
-import alertas.dtos.response.MercanciaResponse;
-import alertas.exceptions.NotFoundException;
-import alertas.exceptions.RemoteServiceException;
-import alertas.models.AlertModel;
-import alertas.repositories.AlertRepository;
+import clients.MercanciaClient;
+import dtos.request.AlertRequest;
+import dtos.response.AlertResponse;
+import dtos.response.MercanciaResponse;
+import exceptions.NotFoundException;
+import exceptions.RemoteServiceException;
+import models.AlertModel;
+import repositories.AlertRepository;
 
 import feign.FeignException;
 import jakarta.transaction.Transactional;

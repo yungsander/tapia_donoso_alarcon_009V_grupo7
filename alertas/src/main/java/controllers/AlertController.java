@@ -1,4 +1,4 @@
-package alertas.controllers;
+package controllers;
 
 import java.util.List;
 
@@ -6,9 +6,9 @@ import org.springframework.http.HttpStatus;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
-import alertas.dtos.request.AlertRequest;
-import alertas.dtos.response.AlertResponse;
-import alertas.services.AlertService;
+import dtos.request.AlertRequest;
+import dtos.response.AlertResponse;
+import services.AlertService;
 
 import jakarta.validation.Valid;
 

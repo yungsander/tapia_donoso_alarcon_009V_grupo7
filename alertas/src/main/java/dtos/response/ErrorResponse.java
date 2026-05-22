@@ -1,4 +1,4 @@
-package alertas.dtos.response;
+package dtos.response;
 
 import java.time.LocalDateTime;
 import java.util.Map;

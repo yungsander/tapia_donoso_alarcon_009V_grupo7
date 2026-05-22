@@ -1,4 +1,4 @@
-package alertas.exceptions;
+package exceptions;
 
 // Excepción para errores al consumir otro microservicio
 public class RemoteServiceException extends RuntimeException {

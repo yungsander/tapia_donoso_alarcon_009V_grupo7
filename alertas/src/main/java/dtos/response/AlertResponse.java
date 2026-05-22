@@ -1,4 +1,4 @@
-package alertas.dtos.response;
+package dtos.response;
 
 import lombok.Builder;
 import lombok.Data;

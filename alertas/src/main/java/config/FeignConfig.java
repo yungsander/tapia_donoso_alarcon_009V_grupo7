@@ -1,4 +1,4 @@
-package alertas.config;
+package config;
 
 import feign.Logger;
 import feign.Request;
