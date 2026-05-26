@@ -1,0 +1,5 @@
+$kind: http-request
+name: GET exportaciones
+url: http://localhost:8082/api/v1/exportaciones
+method: GET
+order: 1779755060360
