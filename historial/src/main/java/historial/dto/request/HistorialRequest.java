@@ -27,4 +27,7 @@ public class HistorialRequest {
 
     @NotBlank
     private String estadoIngreso;
+
+    @NotBlank(message = "no puede estar vacio")
+    private boolean Vigente;
 }

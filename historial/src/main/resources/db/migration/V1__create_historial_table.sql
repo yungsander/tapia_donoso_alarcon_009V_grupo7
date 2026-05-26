@@ -7,5 +7,6 @@ CREATE TABLE IF NOT EXISTS historial (
     hora_salida     TIME,
     punto_acceso    VARCHAR(255) NOT NULL,
     estado_ingreso  VARCHAR(255) NOT NULL,
+    vigente         BOOLEAN NOT NULL,
     PRIMARY KEY (id_historial)
 );

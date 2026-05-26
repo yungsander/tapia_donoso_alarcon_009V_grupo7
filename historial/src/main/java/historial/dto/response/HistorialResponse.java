@@ -17,6 +17,6 @@ public class HistorialResponse {
     private String puntoAcceso;
     private String tipoAcceso;
     private String estadoIngreso;
-
+    private boolean vigente;
     
 }

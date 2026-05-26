@@ -33,6 +33,14 @@ public class HistorialServices {
                 .collect(Collectors.toList());
     }
 
+    public List<HistorialResponse> obtenerPorVigencia(boolean Vigente) {
+        return historialRepository.findByVigente(Vigente)
+                .stream()
+                .map(this::convertirAResponse)
+                .collect(Collectors.toList());
+
+    }
+
     public HistorialResponse guardar(HistorialRequest request) {
         HistorialModel modelo = new HistorialModel();
 
@@ -41,6 +49,7 @@ public class HistorialServices {
         modelo.setHoraIngreso(request.getHoraIngreso());
         modelo.setPuntoAcceso(request.getPuntoAcceso());
         modelo.setEstadoIngreso(request.getEstadoIngreso());
+        modelo.setVigente(request.isVigente());
 
         HistorialModel guardado = historialRepository.save(modelo);
         return convertirAResponse(guardado);
@@ -65,6 +74,7 @@ public class HistorialServices {
         response.setHoraSalida(modelo.getHoraSalida());
         response.setPuntoAcceso(modelo.getPuntoAcceso());
         response.setEstadoIngreso(modelo.getEstadoIngreso());
+        response.setVigente(modelo.isVigente());
         return response;
     }
 }
