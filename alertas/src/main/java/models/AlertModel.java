@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "alarma")
+@Table(name = "alerta")
 public class AlertModel {
 
     @Id
@@ -17,11 +17,11 @@ public class AlertModel {
     private Long id;
 
     // Nombre de la alerta
-    @Column(name = "nombre_alarma", nullable = false)
+    @Column(name = "nombre_alerta", nullable = false)
     private String nombreAlerta;
 
     // Mensaje de la alerta
-    @Column(name = "mensaje_alarma", nullable = false, length = 500)
+    @Column(name = "mensaje_alerta", nullable = false, length = 500)
     private String mensajeAlerta;
 
     // ID de la mercancía asociada

@@ -1,0 +1,4 @@
+$kind: http-request
+url: http://localhost:8080/api/v1/alertas
+method: GET
+order: 1779754604304
