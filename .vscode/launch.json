@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "PaisesApplication",
+            "request": "launch",
+            "mainClass": "paises.PaisesApplication",
+            "projectName": "paises"
+        },
+        {
+            "type": "java",
             "name": "HistorialApplication",
             "request": "launch",
             "mainClass": "historial.HistorialApplication",
