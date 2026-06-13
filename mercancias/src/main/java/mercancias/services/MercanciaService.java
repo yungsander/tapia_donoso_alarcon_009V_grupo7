@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 import jakarta.transaction.Transactional;
 import mercancias.models.MercanciaModels;
 import mercancias.repositories.MercanciaRepository; 
+
 @Service
 @Transactional
 public class MercanciaService {

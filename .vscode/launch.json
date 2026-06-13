@@ -1,0 +1,11 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "HistorialApplication",
+            "request": "launch",
+            "mainClass": "historial.HistorialApplication",
+            "projectName": "historial"
+        }
+    ]
+}
