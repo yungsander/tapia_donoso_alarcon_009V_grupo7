@@ -1,10 +1,11 @@
 package reportes.controller;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import reportes.dto.request.FiltroReporteAnualDTO;
 import reportes.dto.request.FiltroReporteMensualDTO;
 import reportes.dto.response.ReporteAduaneroResponseDTO;
@@ -13,14 +14,18 @@ import reportes.service.ReportesService;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
-
+@Tag(name = "reportes", description = "generarcion de reportes aduaneros")
 @RestController
 @RequestMapping("/api/reportes")
 public class ReportesController {
 
-    @Autowired
-    private ReportesService reportesService;
+    private final ReportesService reportesService;
+
+    ReportesController(ReportesService reportesService) {
+        this.reportesService = reportesService;
+    }
     
+    @Operation(summary = "generar reporte mensual")
     @PostMapping("/mensual")
     public ResponseEntity<ReporteAduaneroResponseDTO> generarMensual(
         @RequestBody FiltroReporteMensualDTO filtro) {
@@ -29,6 +34,7 @@ public class ReportesController {
             return ResponseEntity.ok(reporte);       
         }
     
+    @Operation(summary = "generar reporte anual")
     @PostMapping("/anual")
     public ResponseEntity<ReporteAduaneroResponseDTO> generarAnual(
             @RequestBody FiltroReporteAnualDTO filtros) {

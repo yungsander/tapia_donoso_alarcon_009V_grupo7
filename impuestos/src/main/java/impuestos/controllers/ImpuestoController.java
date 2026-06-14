@@ -9,9 +9,11 @@ import org.springframework.web.bind.annotation.*;
 import impuestos.dtos.request.ImpuestoRequest;
 import impuestos.dtos.response.ImpuestoResponse;
 import impuestos.services.ImpuestoService;
-
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 
+@Tag(name = "impuestos", description = "gestion de impuestos aduaneros")
 @RestController
 @RequestMapping("/api/v1/impuestos")
 @Validated
@@ -26,6 +28,7 @@ public class ImpuestoController {
     }
 
     // Lista todos los impuestos
+    @Operation(summary = "listar todos los impuestos")
     @GetMapping
     public List<ImpuestoResponse> obtenerTodos() {
 
@@ -33,6 +36,7 @@ public class ImpuestoController {
     }
 
     // Busca por ID
+    @Operation(summary = "obtener impuesto por ID")
     @GetMapping("/{id}")
     public ImpuestoResponse obtenerPorId(
             @PathVariable Long id
@@ -42,6 +46,7 @@ public class ImpuestoController {
     }
 
     // Registra nuevo impuesto
+    @Operation(summary = "registrar nuevo impuesto")
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public ImpuestoResponse guardar(
@@ -52,6 +57,7 @@ public class ImpuestoController {
     }
 
     // Actualiza impuesto
+    @Operation(summary = "actualizar impuesto")
     @PutMapping("/{id}")
     public ImpuestoResponse actualizar(
             @PathVariable Long id,
@@ -62,6 +68,7 @@ public class ImpuestoController {
     }
 
     // Elimina impuesto
+    @Operation(summary = "eliminar impuesto")
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void eliminar(

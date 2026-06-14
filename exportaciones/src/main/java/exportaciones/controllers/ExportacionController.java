@@ -9,9 +9,11 @@ import org.springframework.web.bind.annotation.*;
 import exportaciones.dtos.request.ExportacionRequest;
 import exportaciones.dtos.response.ExportacionResponse;
 import exportaciones.services.ExportacionService;
-
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 
+@Tag(name = "exportaciones", description = "gestion de exportaciones aduaneras")
 @RestController
 @RequestMapping("/api/v1/exportaciones")
 @Validated
@@ -26,6 +28,7 @@ public class ExportacionController {
     }
 
     // Lista todas
+    @Operation(summary = "listar todas las exportaciones")
     @GetMapping
     public List<ExportacionResponse> obtenerTodas() {
 
@@ -33,6 +36,7 @@ public class ExportacionController {
     }
 
     // Busca por ID
+    @Operation(summary = "obtener exportacion por ID")
     @GetMapping("/{id}")
     public ExportacionResponse obtenerPorId(
             @PathVariable Long id
@@ -42,6 +46,7 @@ public class ExportacionController {
     }
 
     // Guarda
+    @Operation(summary = "registrar nueva exportacion")
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public ExportacionResponse guardar(
@@ -52,6 +57,7 @@ public class ExportacionController {
     }
 
     // Actualiza
+    @Operation(summary = "actualizar exportacion")
     @PutMapping("/{id}")
     public ExportacionResponse actualizar(
             @PathVariable Long id,
@@ -62,6 +68,7 @@ public class ExportacionController {
     }
 
     // Elimina
+    @Operation(summary = "eliminar exportacion")
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void eliminar(

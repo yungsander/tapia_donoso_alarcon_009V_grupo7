@@ -6,12 +6,15 @@ import org.springframework.http.HttpStatus;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import usuarios.dtos.request.UsuarioRequest;
 import usuarios.dtos.response.UsuarioResponse;
 import usuarios.services.UsuarioService;
 
 import jakarta.validation.Valid;
 
+@Tag(name = "usuarios", description = "gestion de usuarios del sistema aduanero")
 @RestController
 @RequestMapping("/api/v1/usuarios")
 @Validated
@@ -26,6 +29,7 @@ public class UsuarioController {
     }
 
     // Lista todos los usuarios
+    @Operation(summary = "listar todos los usuarios")
     @GetMapping
     public List<UsuarioResponse> obtenerTodos() {
 
@@ -33,6 +37,7 @@ public class UsuarioController {
     }
 
     // Busca por ID
+    @Operation(summary = "obtener usuario por ID")
     @GetMapping("/{id}")
     public UsuarioResponse obtenerPorId(
             @PathVariable Long id
@@ -42,6 +47,7 @@ public class UsuarioController {
     }
 
     // Registra nuevo usuario
+    @Operation(summary = "registrar nuevo usuario")
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public UsuarioResponse guardar(
@@ -52,6 +58,7 @@ public class UsuarioController {
     }
 
     // Actualiza usuario
+    @Operation(summary = "actualizar usuario")
     @PutMapping("/{id}")
     public UsuarioResponse actualizar(
             @PathVariable Long id,
@@ -62,6 +69,7 @@ public class UsuarioController {
     }
 
     // Elimina usuario
+    @Operation(summary = "eliminar usuario")
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void eliminar(

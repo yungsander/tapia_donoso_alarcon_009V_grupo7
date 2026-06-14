@@ -8,10 +8,15 @@ import org.springframework.web.bind.annotation.*;
 
 import dtos.request.AlertRequest;
 import dtos.response.AlertResponse;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import services.AlertService;
 
 import jakarta.validation.Valid;
 
+// @tag solo agrupa cada endpoint n swagger x categoria
+// en ui aparece como titulo cn cada endp del servicio abajo
+@Tag(name = "Alertas", description = "gestion de alertas de mercancias") 
 @RestController
 @RequestMapping("/api/v1/alertas")
 @Validated
@@ -26,6 +31,10 @@ public class AlertController {
     }
 
     // Lista todas
+    // @operation describe q hace cda endp, aparece cm txto explicado al lado
+    // de cada ruta 
+    // (sin las anotaciones funciona igual pero aparece sin nombre ni agrupacion, solo las rutas)
+    @Operation(summary = "listar todas las alertas")
     @GetMapping
     public List<AlertResponse> obtenerTodas() {
 
@@ -33,7 +42,9 @@ public class AlertController {
     }
 
     // Busca por ID
+
     @GetMapping("/{id}")
+    @Operation(summary = "obtener alerta por ID")
     public AlertResponse obtenerPorId(
             @PathVariable Long id
     ) {
@@ -44,6 +55,7 @@ public class AlertController {
     // Guarda
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
+    @Operation(summary = "crear una alerta")
     public AlertResponse guardar(
             @Valid @RequestBody AlertRequest request
     ) {
@@ -53,6 +65,7 @@ public class AlertController {
 
     // Actualiza
     @PutMapping("/{id}")
+    @Operation(summary = "actualizar alerta")
     public AlertResponse actualizar(
             @PathVariable Long id,
             @Valid @RequestBody AlertRequest request
@@ -64,6 +77,7 @@ public class AlertController {
     // Elimina
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
+    @Operation(summary = "eliminar alerta")
     public void eliminar(
             @PathVariable Long id
     ) {
