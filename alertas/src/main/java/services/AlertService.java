@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+import org.springframework.lang.NonNull;
 import org.springframework.stereotype.Service;
 
 import clients.MercanciaClient;
@@ -67,7 +68,7 @@ public class AlertService {
     }
 
     // Busca alerta por ID
-    public AlertResponse obtenerPorId(Long id) {
+    public AlertResponse obtenerPorId(@NonNull Long id) {
 
         AlertModel alerta = alertRepository.findById(id)
                 .orElseThrow(() ->
@@ -96,7 +97,7 @@ public class AlertService {
     }
 
     // Actualiza alerta
-    public AlertResponse actualizar(Long id, AlertRequest request) {
+    public AlertResponse actualizar(@NonNull Long id, AlertRequest request) {
         
         // CORRECCIÓN: Se quitó el punto y coma (;) después de findById
         AlertModel alertaExistente = alertRepository.findById(id)
@@ -114,7 +115,8 @@ public class AlertService {
     }
             
     // Elimina alerta
-    public void eliminar(Long id) {
+    @SuppressWarnings("null")
+public void eliminar(@NonNull Long id) {
 
         AlertModel alerta = alertRepository.findById(id)
                 .orElseThrow(() ->
