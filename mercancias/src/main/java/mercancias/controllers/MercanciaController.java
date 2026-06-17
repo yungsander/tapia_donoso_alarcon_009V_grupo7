@@ -56,7 +56,7 @@ public class MercanciaController {
     public ResponseEntity<MercanciaModels> actualizar(@PathVariable Long id, @RequestBody MercanciaModels mercancia) {
         MercanciaModels mercanciaActualizada = mercanciaService.actualizar(id, mercancia);
         if (mercanciaActualizada != null) {
-            return ResponseEntity.ok(mercanciaActualizada)
+            return ResponseEntity.ok(mercanciaActualizada);
         }
         return ResponseEntity.notFound().build();
     }
@@ -71,4 +71,5 @@ public class MercanciaController {
     public ResponseEntity<Void> eliminar(@PathVariable Long id) {
         mercanciaService.eliminar(id);
         return ResponseEntity.noContent().build(); 
+    }
 }
