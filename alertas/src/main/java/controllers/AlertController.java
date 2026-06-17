@@ -3,11 +3,13 @@ package controllers;
 import java.util.List;
 
 import org.springframework.http.HttpStatus;
+import org.springframework.lang.NonNull;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import dtos.request.AlertRequest;
 import dtos.response.AlertResponse;
+
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import services.AlertService;
@@ -46,7 +48,7 @@ public class AlertController {
     @GetMapping("/{id}")
     @Operation(summary = "obtener alerta por ID")
     public AlertResponse obtenerPorId(
-            @PathVariable Long id
+            @PathVariable @org.springframework.lang.NonNull Long id
     ) {
 
         return alertService.obtenerPorId(id);
@@ -67,7 +69,7 @@ public class AlertController {
     @PutMapping("/{id}")
     @Operation(summary = "actualizar alerta")
     public AlertResponse actualizar(
-            @PathVariable Long id,
+            @PathVariable @NonNull Long id,
             @Valid @RequestBody AlertRequest request
     ) {
 
@@ -79,7 +81,7 @@ public class AlertController {
     @ResponseStatus(HttpStatus.NO_CONTENT)
     @Operation(summary = "eliminar alerta")
     public void eliminar(
-            @PathVariable Long id
+            @PathVariable @org.springframework.lang.NonNull Long id
     ) {
 
         alertService.eliminar(id);
