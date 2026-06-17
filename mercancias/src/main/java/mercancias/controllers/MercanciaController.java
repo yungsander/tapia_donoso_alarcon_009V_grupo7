@@ -1,25 +1,21 @@
 package mercancias.controllers;
 
-import java.util.List;
-
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
-
 import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
 import mercancias.models.MercanciaModels;
 import mercancias.services.MercanciaService;
 
-@Tag(name = "mercancia", description = "gestion de mercancias del sistema aduanero")
+import java.util.List;
+
+@Tag(name = "mercancias", description = "gestion de mercancias del sistema aduanero")
 @RestController
-@RequestMapping("/api/v1/mercancia")
+@RequestMapping("/api/mercancias")
 public class MercanciaController {
 
     private final MercanciaService mercanciaService;
@@ -29,41 +25,50 @@ public class MercanciaController {
     }
 
     // LISTAR MERCANCIAS
-    @Operation(summary = "listar todas las mercancias")
+    @Operation(summary = "listar todas las mercancias",
+        description = "retorna una lista completa de todas las mercancias registradas en el sistema de aduanas")
+    @ApiResponse(responseCode = "200", description = "lista obtenida correctamente")
     @GetMapping
-    public List<MercanciaModels> listar() {
-        return mercanciaService.obtenerTodos();
+    public ResponseEntity<List<MercanciaModels>> obtenerTodos() {
+        return ResponseEntity.ok(mercanciaService.obtenerTodos());
     }
 
     // REGISTRAR MERCANCIA
-    @Operation(summary = "registrar nueva mercancia")
+    @Operation(summary = "registrar nueva mercancia",
+        description = "guarda una nueva mercancia en la base de datos con sus respectivos detalles (peso, valor, origen, etc)")
+    @ApiResponses({
+        @ApiResponse(responseCode = "201", description = "mercancia creada y guardada existosamente"),
+        @ApiResponse(responseCode = "400", description = "datos de entrada invalidos o incompletos")
+    })    
     @PostMapping
     public ResponseEntity<MercanciaModels> guardar(@RequestBody MercanciaModels mercancia) {
-        return ResponseEntity.ok(
-        mercanciaService.guardar(mercancia)
-        );
+        MercanciaModels nuevaMercancia = mercanciaService.guardar(mercancia);
+        return new ResponseEntity<>(nuevaMercancia, HttpStatus.CREATED);
     }
 
     // ACTUALIZAR INFORMACION
     @Operation(summary = "actualizar mercancia")
+    @ApiResponses({
+        @ApiResponse(responseCode = "200", description = "mercancia actualizada correctamente"),
+        @ApiResponse(responseCode = "404", description = "no se encontro una mercancia con el id proporcionado")
+    })
     @PutMapping("/{id}")
-    public ResponseEntity<MercanciaModels> actualizar(@PathVariable Long id,@RequestBody MercanciaModels mercancia) {
-
-        MercanciaModels actualizada =
-                mercanciaService.actualizar(id, mercancia);
-
-        if (actualizada == null) {
-            return ResponseEntity.notFound().build();
+    public ResponseEntity<MercanciaModels> actualizar(@PathVariable Long id, @RequestBody MercanciaModels mercancia) {
+        MercanciaModels mercanciaActualizada = mercanciaService.actualizar(id, mercancia);
+        if (mercanciaActualizada != null) {
+            return ResponseEntity.ok(mercanciaActualizada)
         }
-
-        return ResponseEntity.ok(actualizada);
+        return ResponseEntity.notFound().build();
     }
 
     // ELIMINAR MERCANCIA
     @Operation(summary = "eliminar mercancia")
+    @ApiResponses({
+        @ApiResponse(responseCode = "204", description = "mercancia eliminada existosamente (sin contenido"),
+        @ApiResponse(responseCode = "404", description = "mercancia no encontrada")
+    })
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> eliminar(@PathVariable Long id) {
         mercanciaService.eliminar(id);
-        return ResponseEntity.noContent().build();
-    }
+        return ResponseEntity.noContent().build(); 
 }
