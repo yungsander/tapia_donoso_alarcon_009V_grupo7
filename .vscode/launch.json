@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "UsuariosApplication",
+            "request": "launch",
+            "mainClass": "usuarios.UsuariosApplication",
+            "projectName": "usuarios"
+        },
+        {
+            "type": "java",
             "name": "MercanciasApplication",
             "request": "launch",
             "mainClass": "mercancias.MercanciasApplication",
