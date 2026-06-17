@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "ReportesApplication",
+            "request": "launch",
+            "mainClass": "reportes.ReportesApplication",
+            "projectName": "reportes"
+        },
+        {
+            "type": "java",
             "name": "UsuariosApplication",
             "request": "launch",
             "mainClass": "usuarios.UsuariosApplication",

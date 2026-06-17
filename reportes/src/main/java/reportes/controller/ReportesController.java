@@ -25,20 +25,20 @@ public class ReportesController {
         this.reportesService = reportesService;
     }
     
-    @Operation(summary = "generar reporte mensual")
+    @Operation(summary = "generar reporte mensual",
+        description = "genera un reporte detallado filtrando por año y mes")
     @PostMapping("/mensual")
     public ResponseEntity<ReporteAduaneroResponseDTO> generarMensual(
         @RequestBody FiltroReporteMensualDTO filtro) {
-
             ReporteAduaneroResponseDTO reporte = reportesService.generarMensual(filtro);
             return ResponseEntity.ok(reporte);       
         }
     
-    @Operation(summary = "generar reporte anual")
+    @Operation(summary = "generar reporte anual",
+        description = "genera un reporte detallado filtrando unicamente por año")
     @PostMapping("/anual")
     public ResponseEntity<ReporteAduaneroResponseDTO> generarAnual(
             @RequestBody FiltroReporteAnualDTO filtros) {
-        
         ReporteAduaneroResponseDTO reporte = reportesService.generarAnual(filtros);
         return ResponseEntity.ok(reporte);
     

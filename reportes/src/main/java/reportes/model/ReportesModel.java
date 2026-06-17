@@ -20,7 +20,7 @@ public class ReportesModel {
     private Long idReporte;
     
     @Column(name = "numero_manifiesto", nullable = false)
-    private Long numeroManifiesto;
+    private String numeroManifiesto;
 
     @Column(name = "fecha_y_hora_ingreso")
     private LocalDateTime fechaHoraIngreso;
@@ -32,13 +32,13 @@ public class ReportesModel {
     private Integer mesTramite;
 
     @Column(name = "nombre_agencia")
-    private Integer nombreAgencia;
+    private String nombreAgencia;
 
     @Column(name = "categoria_mercancia")
     private Integer categoriaMercancia;
 
     @Column(name = "total_impuestos_pagados")
-    private Integer totalImpuestosPagados;
+    private Double totalImpuestosPagados;
 
     @Column(name = "estado_final")
     private Integer estadoFinal;
