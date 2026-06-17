@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "MercanciasApplication",
+            "request": "launch",
+            "mainClass": "mercancias.MercanciasApplication",
+            "projectName": "mercancias"
+        },
+        {
+            "type": "java",
             "name": "PaisesApplication",
             "request": "launch",
             "mainClass": "paises.PaisesApplication",
