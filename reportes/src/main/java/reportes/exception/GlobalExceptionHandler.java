@@ -1,60 +1,34 @@
 package reportes.exception;
 
-import java.time.LocalDateTime;
-import java.util.HashMap;
-
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.validation.FieldError;
-import org.springframework.web.bind.MethodArgumentNotValidException;
+import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
-import org.springframework.web.bind.annotation.RestControllerAdvice;
+import java.time.LocalDateTime;
 
-import jakarta.servlet.http.HttpServletRequest;
-import reportes.dto.response.ErrorResponse;
-
-import java.util.Map;
-
-@RestControllerAdvice
+@ControllerAdvice
 public class GlobalExceptionHandler {
 
-    @ExceptionHandler(MethodArgumentNotValidException.class)
-    public ResponseEntity<ErrorResponse> handleValidation(
-        MethodArgumentNotValidException ex,
-        HttpServletRequest request
-    ) {
-        Map<String, String> details = new HashMap<>();
-
-        for (FieldError error : ex.getBindingResult().getFieldErrors()) {
-            details.put(error.getField(), error.getDefaultMessage());
-        }
-
-        ErrorResponse errorResponse = ErrorResponse.builder()
-                .timestamp(LocalDateTime.now())
-                .status(HttpStatus.BAD_REQUEST.value())
-                .error("bad request")
-                .message("error de validacion en los datos enviados")
-                .path(request.getRequestURI())
-                .details(details)
-                .build();
-        return ResponseEntity.badRequest().body(errorResponse);
-
-    }
-
-    @ExceptionHandler(NotFoundException.class)
-    public ResponseEntity<ErrorResponse> handleNotFound(
-        NotFoundException ex,
-        HttpServletRequest request
-    ) {
-        ErrorResponse errorResponse = ErrorResponse.builder()
+    @ExceptionHandler(ReporteNotFoundException.class)
+    public ResponseEntity<ErrorResponse> handleReporteNotFound(ReporteNotFoundException ex) {
+        ErrorResponse error = ErrorResponse.builder()
                 .timestamp(LocalDateTime.now())
                 .status(HttpStatus.NOT_FOUND.value())
-                .error("not found")
+                .error("Reporte no encontrado")
                 .message(ex.getMessage())
-                .path(request.getRequestURI())
-                .details(null)
                 .build();
-        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(errorResponse);
+        return new ResponseEntity<>(error, HttpStatus.NOT_FOUND);
+    }
+
+    @ExceptionHandler(Exception.class)
+    public ResponseEntity<ErrorResponse> handleGlobalException(Exception ex) {
+        ErrorResponse error = ErrorResponse.builder()
+                .timestamp(LocalDateTime.now())
+                .status(HttpStatus.INTERNAL_SERVER_ERROR.value())
+                .error("Error interno del servidor")
+                .message("Ocurrió un problema inesperado: " + ex.getMessage())
+                .build();
+        return new ResponseEntity<>(error, HttpStatus.INTERNAL_SERVER_ERROR);
     }
     
 }

@@ -1,21 +1,15 @@
-package reportes.dto.response;
-
-import java.time.LocalDateTime;
+package reportes.exception;
 
 import lombok.Builder;
 import lombok.Data;
-import java.util.Map;
+import java.time.LocalDateTime;
 
 @Data
 @Builder
 public class ErrorResponse {
-    
     private LocalDateTime timestamp;
     private int status;
     private String error;
     private String message;
-    private String path;
-
-    private Map<String, String> details;
     
 }
