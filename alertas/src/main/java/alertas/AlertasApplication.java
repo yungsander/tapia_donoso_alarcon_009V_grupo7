@@ -4,6 +4,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @SpringBootApplication
 @ComponentScan(basePackages = {
@@ -11,6 +12,7 @@ import org.springframework.context.annotation.ComponentScan;
 	"dtos", "exceptions", "models", "config", "clients"
 })
 @EnableFeignClients(basePackages = "clients")
+@EnableJpaRepositories(basePackages = "repositories")
 public class AlertasApplication {
 
 	public static void main(String[] args) {
