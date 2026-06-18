@@ -60,6 +60,14 @@ public class HistorialServices {
         HistorialModel existente = historialRepository.findById(id)
                 .orElseThrow(() -> new NotFoundException("historial no encontrado con el id: " + id));
 
+        existente.setIdUsuario(request.getIdUsuario());
+        existente.setFechaIngreso(request.getFechaIngreso());
+        existente.setHoraIngreso(request.getHoraIngreso());
+
+        existente.setPuntoAcceso(request.getPuntoAcceso());
+        existente.setEstadoIngreso(request.getEstadoIngreso());
+        existente.setVigente(request.isVigente());
+
         HistorialModel actualizado = historialRepository.save(existente);
         return convertirAResponse(actualizado);
     }
