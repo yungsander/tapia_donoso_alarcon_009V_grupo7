@@ -12,6 +12,10 @@ spring:
     hibernate:
       ddl-auto: validate
 
+mercancia:
+  service:
+    url: http://ms-mercancias:8080
+
 springdoc:
   api-docs:
     path: /api-docs

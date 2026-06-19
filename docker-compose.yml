@@ -214,6 +214,28 @@ services:
       - aduana-net
     restart: unless-stopped
 
+  gateway:
+    build:
+      context: ./Gateway
+      dockerfile: Dockerfile
+    container_name: ms-gateway
+    ports:
+      - "9090:8080"
+    depends_on:
+      - alertas
+      - documentos
+      - exportaciones
+      - historial
+      - importaciones
+      - impuestos
+      - mercancias
+      - paises
+      - reportes
+      - usuarios
+    networks:
+      - aduana-net
+    restart: unless-stopped
+
 
 # ── Volúmenes y red ───────────────────────────────────────────────
 volumes:
