@@ -1,6 +1,32 @@
 $kind: http-request
-url: ?{{baseUrl_alertas}}=/api/v1/alertas/{id}
+name: GET
+url: "{{baseUrl_alertas}}/api/v1/alertas"
 method: GET
-queryParams:
-  "{{baseUrl_alertas}}": /api/v1/alertas/{id}
+body:
+  type: json
+  content: "{\r
+
+    \  \"id\": 9007199254740991,\r
+
+    \  \"nombreAlerta\": \"string\",\r
+
+    \  \"mensajeAlerta\": \"string\",\r
+
+    \  \"mercancia\": {\r
+
+    \    \"id\": 9007199254740991,\r
+
+    \    \"nombre\": \"string\",\r
+
+    \    \"descripcion\": \"string\",\r
+
+    \    \"categoria\": \"string\",\r
+
+    \    \"valor\": 0.1,\r
+
+    \    \"peso\": 0.1\r
+
+    \  }\r
+
+    }"
 order: 36366061050268
