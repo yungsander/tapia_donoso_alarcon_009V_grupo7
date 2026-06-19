@@ -1,0 +1,6 @@
+$kind: http-request
+url: ?{{baseUrl_alertas}}=/api/v1/alertas/{id}
+method: GET
+queryParams:
+  "{{baseUrl_alertas}}": /api/v1/alertas/{id}
+order: 36366061050268

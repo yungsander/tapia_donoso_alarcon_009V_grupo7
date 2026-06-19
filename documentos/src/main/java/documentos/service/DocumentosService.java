@@ -2,6 +2,7 @@ package documentos.service;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -15,6 +16,7 @@ public class DocumentosService {
     private final DocumentosRepository repository;
     private final FileStorageService fileStorageService;
 
+    @Autowired
     public DocumentosService(DocumentosRepository repository, FileStorageService fileStorageService) {
         this.repository = repository;
         this.fileStorageService = fileStorageService;

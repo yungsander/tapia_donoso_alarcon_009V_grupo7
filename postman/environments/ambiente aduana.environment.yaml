@@ -1,0 +1,23 @@
+name: ambiente aduana
+values:
+  - key: baseUrl_alertas
+    value: ''
+  - key: baseUrl_documentos
+    value: ''
+  - key: baseUrl_exportaciones
+    value: ''
+  - key: baseUrl_historial
+    value: ''
+  - key: baseUrl_importaciones
+    value: ''
+  - key: baseUrl_impuestos
+    value: ''
+  - key: baseUrl_mercancias
+    value: ''
+  - key: baseUrl_paises
+    value: ''
+  - key: baseUrl_usuarios
+    value: ''
+  - key: baseUrl_reportes
+    value: ''
+color: 0

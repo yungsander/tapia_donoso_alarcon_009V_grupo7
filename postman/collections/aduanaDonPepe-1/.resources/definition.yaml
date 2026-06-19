@@ -1,2 +1,5 @@
 $kind: collection
 name: aduanaDonPepe
+variables:
+  baseUrl.alertas: ""
+  baseUrl.documentos: ""

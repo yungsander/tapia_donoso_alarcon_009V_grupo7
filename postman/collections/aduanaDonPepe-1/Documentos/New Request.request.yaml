@@ -1,0 +1,19 @@
+$kind: http-request
+name: New Request
+url: http://localhost:8081/api/documentos/upload
+method: POST
+body:
+  type: formdata
+  content:
+    - type: file
+      key: file
+      src:
+        - /C:/Users/dresa/Downloads/Evaluacion Parcial 3_Estudiante (1).pdf
+      description: ""
+      disabled: false
+    - type: text
+      key: manifiesto
+      value: MAN-12345
+      description: ""
+      disabled: false
+order: 1781827343408

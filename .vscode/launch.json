@@ -2,6 +2,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "AlertasApplication",
+            "request": "launch",
+            "mainClass": "alertas.AlertasApplication",
+            "projectName": "alertas"
+        },
+        {
+            "type": "java",
+            "name": "DocumentosApplication",
+            "request": "launch",
+            "mainClass": "documentos.DocumentosApplication",
+            "projectName": "documentos"
+        },
+        {
+            "type": "java",
             "name": "ReportesApplication",
             "request": "launch",
             "mainClass": "reportes.ReportesApplication",
