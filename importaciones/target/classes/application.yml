@@ -1,7 +1,0 @@
-spring:
-    profiles:
-        active: dev
-
-mercancia:
-  service:
-    url: http://ms-mercancias:8080
