@@ -1,0 +1,25 @@
+server:
+  port: 8084
+
+spring:
+  application:
+    name: importaciones
+  datasource:
+    url: jdbc:mysql://mysql:3306/db_importaciones?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true
+    username: aduana
+    password: aduana123
+  jpa:
+    hibernate:
+      ddl-auto: validate
+
+mercancia:
+  service:
+    url: http://ms-mercancias:8080
+
+springdoc:
+  api-docs:
+    path: /api-docs
+    enabled: true
+  swagger-ui:
+    path: /swagger-ui.html
+    enabled: true

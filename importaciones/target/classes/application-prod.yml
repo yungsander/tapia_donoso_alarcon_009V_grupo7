@@ -1,0 +1,25 @@
+server:
+  port: ${PORT:8084}
+
+spring:
+  application:
+    name: importaciones
+  datasource:
+    url: ${SPRING_DATASOURCE_URL}
+    username: ${SPRING_DATASOURCE_USERNAME}
+    password: ${SPRING_DATASOURCE_PASSWORD}
+  jpa:
+    hibernate:
+      ddl-auto: validate
+
+mercancia:
+  service:
+    url: http://ms-mercancias:8080
+
+springdoc:
+  api-docs:
+    path: /api-docs
+    enabled: true
+  swagger-ui:
+    path: /swagger-ui.html
+    enabled: true
