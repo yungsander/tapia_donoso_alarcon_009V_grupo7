@@ -1,0 +1,90 @@
+spring:
+  application:
+    name: api-gateway
+  profiles:
+    active: dev
+  cloud:
+    gateway:
+      routes:
+
+        #alerta
+        - id: alertas-service
+          uri: http://ms-alertas:8080
+          predicates:
+            - Path=/api/alertas/**
+          filters:
+            - StripPrefix=1
+
+        #documentos
+        - id: documentos-service
+          uri: http://ms-documentos:8080
+          predicates:
+            - Path=/api/documentos/**
+          filters:
+            - StripPrefix=1
+
+        #exportaciones
+        - id: exportaciones-service
+          uri: http://ms-exportaciones:8080
+          predicates:
+            - Path=/api/exportaciones/**
+          filters:
+            - StripPrefix=1
+
+        #historial
+        - id: historial-service
+          uri: http://ms-historial:8080
+          predicates:
+            - Path=/api/historial/**
+          filters:
+            - StripPrefix=1
+
+        #importaciones
+        - id: importaciones-service
+          uri: http://ms-importaciones:8080
+          predicates:
+            - Path=/api/importaciones/**
+          filters:
+            - StripPrefix=1
+
+        #impuestos
+        - id: impuetos-service
+          uri: http://ms-impuestos:8080
+          predicates:
+            - Path=/api/impuestos/**
+          filters:
+            - StripPrefix=1
+
+        #mercancia
+        - id: mercancia-service
+          uri: http://ms-mercancias:8080
+          predicates:
+            - Path=/api/mercancia/**
+          filters:
+            - StripPrefix=1
+
+        #paises
+        - id: paises-service
+          uri: http://ms-paises:8080
+          predicates:
+            - Path=/api/paises/**
+          filters:
+            - StripPrefix=1
+
+        #reportes
+        - id: reportes-service
+          uri: http://ms-reportes:8080
+          predicates:
+            - Path=/api/reportes/**
+          filters:
+            - StripPrefix=1
+
+        #usuarios
+        - id: usuarios-service
+          uri: http://ms-usuarios:8080
+          predicates:
+            - Path=/api/usuarios/**
+          filters:
+            - StripPrefix=1
+server:
+  port: 8080

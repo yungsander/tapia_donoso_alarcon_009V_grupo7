@@ -22,6 +22,18 @@ services:
       retries: 5
     restart: unless-stopped
 
+  # ── Eureka Server (Service Discovery) ──────────────────────────────
+  eureka-server:
+    build:
+      context: ./eureka-server
+      dockerfile: Dockerfile
+    container_name: eureka-server
+    ports:
+      - "8761:8761"
+    networks:
+      - aduana-net
+    restart: unless-stopped
+
   # ── Microservicios ───────────────────────────────────────────────
 
   alertas:
@@ -39,6 +51,8 @@ services:
     depends_on:
       mysql:
         condition: service_healthy
+      eureka-server:
+        condition: service_started
     networks:
       - aduana-net
     restart: unless-stopped
@@ -58,6 +72,8 @@ services:
     depends_on:
       mysql:
         condition: service_healthy
+      eureka-server:
+        condition: service_started
     networks:
       - aduana-net
     restart: unless-stopped
@@ -77,6 +93,8 @@ services:
     depends_on:
       mysql:
         condition: service_healthy
+      eureka-server:
+        condition: service_started
     networks:
       - aduana-net
     restart: unless-stopped
@@ -96,6 +114,8 @@ services:
     depends_on:
       mysql:
         condition: service_healthy
+      eureka-server:
+        condition: service_started
     networks:
       - aduana-net
     restart: unless-stopped
@@ -115,6 +135,8 @@ services:
     depends_on:
       mysql:
         condition: service_healthy
+      eureka-server:
+        condition: service_started
     networks:
       - aduana-net
     restart: unless-stopped
@@ -134,6 +156,8 @@ services:
     depends_on:
       mysql:
         condition: service_healthy
+      eureka-server:
+        condition: service_started
     networks:
       - aduana-net
     restart: unless-stopped
@@ -153,6 +177,8 @@ services:
     depends_on:
       mysql:
         condition: service_healthy
+      eureka-server:
+        condition: service_started
     networks:
       - aduana-net
     restart: unless-stopped
@@ -172,6 +198,8 @@ services:
     depends_on:
       mysql:
         condition: service_healthy
+      eureka-server:
+        condition: service_started
     networks:
       - aduana-net
     restart: unless-stopped
@@ -191,6 +219,8 @@ services:
     depends_on:
       mysql:
         condition: service_healthy
+      eureka-server:
+        condition: service_started
     networks:
       - aduana-net
     restart: unless-stopped
@@ -210,6 +240,8 @@ services:
     depends_on:
       mysql:
         condition: service_healthy
+      eureka-server:
+        condition: service_started
     networks:
       - aduana-net
     restart: unless-stopped
@@ -222,6 +254,7 @@ services:
     ports:
       - "9090:8080"
     depends_on:
+      - eureka-server
       - alertas
       - documentos
       - exportaciones
