@@ -1,0 +1,14 @@
+C:\Users\dresa\OneDrive\Desktop\tapia_donoso_alarcon_009V_grupo7\exportaciones\src\main\java\exportaciones\clients\MercanciaClient.java
+C:\Users\dresa\OneDrive\Desktop\tapia_donoso_alarcon_009V_grupo7\exportaciones\src\main\java\exportaciones\config\FeignConfig.java
+C:\Users\dresa\OneDrive\Desktop\tapia_donoso_alarcon_009V_grupo7\exportaciones\src\main\java\exportaciones\controllers\ExportacionController.java
+C:\Users\dresa\OneDrive\Desktop\tapia_donoso_alarcon_009V_grupo7\exportaciones\src\main\java\exportaciones\dtos\request\ExportacionRequest.java
+C:\Users\dresa\OneDrive\Desktop\tapia_donoso_alarcon_009V_grupo7\exportaciones\src\main\java\exportaciones\dtos\response\ErrorResponse.java
+C:\Users\dresa\OneDrive\Desktop\tapia_donoso_alarcon_009V_grupo7\exportaciones\src\main\java\exportaciones\dtos\response\ExportacionResponse.java
+C:\Users\dresa\OneDrive\Desktop\tapia_donoso_alarcon_009V_grupo7\exportaciones\src\main\java\exportaciones\dtos\response\MercanciaResponse.java
+C:\Users\dresa\OneDrive\Desktop\tapia_donoso_alarcon_009V_grupo7\exportaciones\src\main\java\exportaciones\exceptions\GlobalExceptionHandler.java
+C:\Users\dresa\OneDrive\Desktop\tapia_donoso_alarcon_009V_grupo7\exportaciones\src\main\java\exportaciones\exceptions\NotFoundException.java
+C:\Users\dresa\OneDrive\Desktop\tapia_donoso_alarcon_009V_grupo7\exportaciones\src\main\java\exportaciones\exceptions\RemoteServiceException.java
+C:\Users\dresa\OneDrive\Desktop\tapia_donoso_alarcon_009V_grupo7\exportaciones\src\main\java\exportaciones\ExportacionesApplication.java
+C:\Users\dresa\OneDrive\Desktop\tapia_donoso_alarcon_009V_grupo7\exportaciones\src\main\java\exportaciones\models\ExportacionModel.java
+C:\Users\dresa\OneDrive\Desktop\tapia_donoso_alarcon_009V_grupo7\exportaciones\src\main\java\exportaciones\repositories\ExportacionRepository.java
+C:\Users\dresa\OneDrive\Desktop\tapia_donoso_alarcon_009V_grupo7\exportaciones\src\main\java\exportaciones\services\ExportacionService.java

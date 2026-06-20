@@ -1,0 +1,14 @@
+C:\Users\dresa\OneDrive\Desktop\tapia_donoso_alarcon_009V_grupo7\alertas\src\main\java\alertas\AlertasApplication.java
+C:\Users\dresa\OneDrive\Desktop\tapia_donoso_alarcon_009V_grupo7\alertas\src\main\java\clients\MercanciaClient.java
+C:\Users\dresa\OneDrive\Desktop\tapia_donoso_alarcon_009V_grupo7\alertas\src\main\java\config\FeignConfig.java
+C:\Users\dresa\OneDrive\Desktop\tapia_donoso_alarcon_009V_grupo7\alertas\src\main\java\controllers\AlertController.java
+C:\Users\dresa\OneDrive\Desktop\tapia_donoso_alarcon_009V_grupo7\alertas\src\main\java\dtos\request\AlertRequest.java
+C:\Users\dresa\OneDrive\Desktop\tapia_donoso_alarcon_009V_grupo7\alertas\src\main\java\dtos\response\AlertResponse.java
+C:\Users\dresa\OneDrive\Desktop\tapia_donoso_alarcon_009V_grupo7\alertas\src\main\java\dtos\response\ErrorResponse.java
+C:\Users\dresa\OneDrive\Desktop\tapia_donoso_alarcon_009V_grupo7\alertas\src\main\java\dtos\response\MercanciaResponse.java
+C:\Users\dresa\OneDrive\Desktop\tapia_donoso_alarcon_009V_grupo7\alertas\src\main\java\exceptions\GlobalExceptionHandler.java
+C:\Users\dresa\OneDrive\Desktop\tapia_donoso_alarcon_009V_grupo7\alertas\src\main\java\exceptions\NotFoundException.java
+C:\Users\dresa\OneDrive\Desktop\tapia_donoso_alarcon_009V_grupo7\alertas\src\main\java\exceptions\RemoteServiceException.java
+C:\Users\dresa\OneDrive\Desktop\tapia_donoso_alarcon_009V_grupo7\alertas\src\main\java\models\AlertModel.java
+C:\Users\dresa\OneDrive\Desktop\tapia_donoso_alarcon_009V_grupo7\alertas\src\main\java\repositories\AlertRepository.java
+C:\Users\dresa\OneDrive\Desktop\tapia_donoso_alarcon_009V_grupo7\alertas\src\main\java\services\AlertService.java

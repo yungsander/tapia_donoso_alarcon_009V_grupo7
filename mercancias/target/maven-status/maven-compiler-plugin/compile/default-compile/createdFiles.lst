@@ -1,0 +1,5 @@
+mercancias\MercanciasApplication.class
+mercancias\services\MercanciaService.class
+mercancias\models\MercanciaModels.class
+mercancias\controllers\MercanciaController.class
+mercancias\repositories\MercanciaRepository.class

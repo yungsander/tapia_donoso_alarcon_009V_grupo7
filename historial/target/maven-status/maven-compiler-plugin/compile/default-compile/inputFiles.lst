@@ -1,0 +1,14 @@
+C:\Users\dresa\OneDrive\Desktop\tapia_donoso_alarcon_009V_grupo7\historial\src\main\java\historial\client\UsuarioClient.java
+C:\Users\dresa\OneDrive\Desktop\tapia_donoso_alarcon_009V_grupo7\historial\src\main\java\historial\config\FeignConfig.java
+C:\Users\dresa\OneDrive\Desktop\tapia_donoso_alarcon_009V_grupo7\historial\src\main\java\historial\controller\HistorialController.java
+C:\Users\dresa\OneDrive\Desktop\tapia_donoso_alarcon_009V_grupo7\historial\src\main\java\historial\dto\request\HistorialRequest.java
+C:\Users\dresa\OneDrive\Desktop\tapia_donoso_alarcon_009V_grupo7\historial\src\main\java\historial\dto\response\ErrorResponse.java
+C:\Users\dresa\OneDrive\Desktop\tapia_donoso_alarcon_009V_grupo7\historial\src\main\java\historial\dto\response\HistorialResponse.java
+C:\Users\dresa\OneDrive\Desktop\tapia_donoso_alarcon_009V_grupo7\historial\src\main\java\historial\dto\response\UsuarioResponse.java
+C:\Users\dresa\OneDrive\Desktop\tapia_donoso_alarcon_009V_grupo7\historial\src\main\java\historial\exception\GlobalExceptionHandler.java
+C:\Users\dresa\OneDrive\Desktop\tapia_donoso_alarcon_009V_grupo7\historial\src\main\java\historial\exception\NotFoundException.java
+C:\Users\dresa\OneDrive\Desktop\tapia_donoso_alarcon_009V_grupo7\historial\src\main\java\historial\exception\RemoteServiceException.java
+C:\Users\dresa\OneDrive\Desktop\tapia_donoso_alarcon_009V_grupo7\historial\src\main\java\historial\HistorialApplication.java
+C:\Users\dresa\OneDrive\Desktop\tapia_donoso_alarcon_009V_grupo7\historial\src\main\java\historial\model\HistorialModel.java
+C:\Users\dresa\OneDrive\Desktop\tapia_donoso_alarcon_009V_grupo7\historial\src\main\java\historial\repository\HistorialRepository.java
+C:\Users\dresa\OneDrive\Desktop\tapia_donoso_alarcon_009V_grupo7\historial\src\main\java\historial\services\HistorialServices.java

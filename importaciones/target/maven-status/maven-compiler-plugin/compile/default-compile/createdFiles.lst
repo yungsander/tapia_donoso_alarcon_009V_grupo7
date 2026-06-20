@@ -1,0 +1,16 @@
+importaciones\config\FeignConfig.class
+importaciones\models\ImportacionModel.class
+importaciones\exceptions\NotFoundException.class
+importaciones\dtos\response\ImportacionResponse$ImportacionResponseBuilder.class
+importaciones\exceptions\RemoteServiceException.class
+importaciones\dtos\response\ErrorResponse.class
+importaciones\ImportacionesApplication.class
+importaciones\dtos\response\ErrorResponse$ErrorResponseBuilder.class
+importaciones\repositories\ImportacionRepository.class
+importaciones\dtos\request\ImportacionRequest.class
+importaciones\dtos\response\MercanciaResponse.class
+importaciones\exceptions\GlobalExceptionHandler.class
+importaciones\services\ImportacionService.class
+importaciones\clients\MercanciaClient.class
+importaciones\controllers\ImportacionController.class
+importaciones\dtos\response\ImportacionResponse.class
