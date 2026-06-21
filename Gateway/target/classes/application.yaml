@@ -6,10 +6,9 @@ spring:
   cloud:
     gateway:
       routes:
-
-        #alerta
+        #alertas
         - id: alertas-service
-          uri: http://ms-alertas:8080
+          uri: lb://alertas
           predicates:
             - Path=/api/alertas/**
           filters:
@@ -17,7 +16,7 @@ spring:
 
         #documentos
         - id: documentos-service
-          uri: http://ms-documentos:8080
+          uri: lb://documentos
           predicates:
             - Path=/api/documentos/**
           filters:
@@ -25,7 +24,7 @@ spring:
 
         #exportaciones
         - id: exportaciones-service
-          uri: http://ms-exportaciones:8080
+          uri: lb://exportaciones
           predicates:
             - Path=/api/exportaciones/**
           filters:
@@ -33,7 +32,7 @@ spring:
 
         #historial
         - id: historial-service
-          uri: http://ms-historial:8080
+          uri: lb://historial
           predicates:
             - Path=/api/historial/**
           filters:
@@ -41,7 +40,7 @@ spring:
 
         #importaciones
         - id: importaciones-service
-          uri: http://ms-importaciones:8080
+          uri: lb://importaciones
           predicates:
             - Path=/api/importaciones/**
           filters:
@@ -49,7 +48,7 @@ spring:
 
         #impuestos
         - id: impuetos-service
-          uri: http://ms-impuestos:8080
+          uri: lb://impuestos
           predicates:
             - Path=/api/impuestos/**
           filters:
@@ -57,15 +56,15 @@ spring:
 
         #mercancia
         - id: mercancia-service
-          uri: http://ms-mercancias:8080
+          uri: lb://mercancias
           predicates:
-            - Path=/api/mercancia/**
+            - Path=/api/mercancias/**
           filters:
             - StripPrefix=1
 
         #paises
         - id: paises-service
-          uri: http://ms-paises:8080
+          uri: lb://paises
           predicates:
             - Path=/api/paises/**
           filters:
@@ -73,7 +72,7 @@ spring:
 
         #reportes
         - id: reportes-service
-          uri: http://ms-reportes:8080
+          uri: lb://reportes
           predicates:
             - Path=/api/reportes/**
           filters:
@@ -81,10 +80,20 @@ spring:
 
         #usuarios
         - id: usuarios-service
-          uri: http://ms-usuarios:8080
+          uri: lb://usuarios
           predicates:
             - Path=/api/usuarios/**
           filters:
             - StripPrefix=1
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka-server:8761/eureka
+    register-with-eureka: true
+    fetch-registry: true
+  instance:
+    prefer-ip-address: true
+
 server:
   port: 8080
