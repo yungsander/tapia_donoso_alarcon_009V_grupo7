@@ -9,8 +9,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 // Cliente Feign para consumir el microservicio de mercancías
 @FeignClient(
-        name = "mercancia-client",
-        url = "${mercancia.service.url}",
+        name = "mercancias",
         configuration = FeignConfig.class
 )
 public interface MercanciaClient {

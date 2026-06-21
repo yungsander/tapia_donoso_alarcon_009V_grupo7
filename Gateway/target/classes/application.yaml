@@ -12,7 +12,7 @@ spring:
           predicates:
             - Path=/api/alertas/**
           filters:
-            - StripPrefix=1
+            - RewritePath=/api/alertas/(?<segment>.*), /api/v1/alertas/${segment}
 
         #documentos
         - id: documentos-service
@@ -28,7 +28,7 @@ spring:
           predicates:
             - Path=/api/exportaciones/**
           filters:
-            - StripPrefix=1
+            - RewritePath=/api/exportaciones/(?<segment>.*), /api/v1/exportaciones/${segment}
 
         #historial
         - id: historial-service
@@ -36,7 +36,7 @@ spring:
           predicates:
             - Path=/api/historial/**
           filters:
-            - StripPrefix=1
+            - RewritePath=/api/historial/(?<segment>.*), /api/v1/historiales/${segment}
 
         #importaciones
         - id: importaciones-service
@@ -44,7 +44,7 @@ spring:
           predicates:
             - Path=/api/importaciones/**
           filters:
-            - StripPrefix=1
+            - RewritePath=/api/importaciones/(?<segment>.*), /api/v1/importaciones/${segment}
 
         #impuestos
         - id: impuetos-service
@@ -52,7 +52,7 @@ spring:
           predicates:
             - Path=/api/impuestos/**
           filters:
-            - StripPrefix=1
+            - RewritePath=/api/impuestos/(?<segment>.*), /api/v1/impuestos/${segment}
 
         #mercancia
         - id: mercancia-service
@@ -84,7 +84,7 @@ spring:
           predicates:
             - Path=/api/usuarios/**
           filters:
-            - StripPrefix=1
+            - RewritePath=/api/usuarios/(?<segment>.*), /api/v1/usuarios/${segment}
 
 eureka:
   client:
