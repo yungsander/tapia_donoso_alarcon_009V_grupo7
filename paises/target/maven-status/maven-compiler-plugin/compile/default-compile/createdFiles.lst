@@ -1,8 +1,0 @@
-paises\PaisesApplication.class
-paises\model\PaisesModel.class
-paises\dto\response\PaisesResponseDTO.class
-paises\exception\GlobalExceptionHandler.class
-paises\exception\NotFoundException.class
-paises\repository\PaisesRepository.class
-paises\service\PaisesService.class
-paises\controller\PaisesController.class

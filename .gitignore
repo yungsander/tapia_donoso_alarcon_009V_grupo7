@@ -1,0 +1,86 @@
+# ============================================================
+#  .gitignore — Aduana Don Pepe (Spring Boot multi-módulo)
+# ============================================================
+
+# ── Compilados Maven ────────────────────────────────────────
+target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+# ── Clases y archivos compilados Java ───────────────────────
+*.class
+*.jar
+*.war
+*.ear
+*.nar
+*.zip
+*.tar.gz
+*.rar
+
+# ── IntelliJ IDEA ───────────────────────────────────────────
+.idea/
+*.iws
+*.iml
+*.ipr
+out/
+
+# ── VS Code ─────────────────────────────────────────────────
+.vscode/
+*.code-workspace
+
+# ── Eclipse / STS ───────────────────────────────────────────
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings/
+.springBeans
+.sts4-cache
+bin/
+
+# ── NetBeans ─────────────────────────────────────────────────
+nbproject/private/
+nbbuild/
+dist/
+nbdist/
+.nb-gradle/
+
+# ── Sistema operativo ────────────────────────────────────────
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# ── Maven wrapper ────────────────────────────────────────────
+!.mvn/wrapper/maven-wrapper.properties
+
+# ── Logs ─────────────────────────────────────────────────────
+*.log
+logs/
+spring.log
+
+# ── Archivos de entorno y secretos ───────────────────────────
+.env
+.env.local
+.env.production
+*.env
+
+# ── Spring Boot devtools ─────────────────────────────────────
+.spring-boot-devtools.properties
+
+# ── JaCoCo cobertura ─────────────────────────────────────────
+jacoco.exec
+jacoco/
+
+# ── Carpeta de uploads generada en tiempo de ejecución ───────
+documentos/uploads/
+uploads/
+
+# ── Node / npm (si hubiera frontend) ─────────────────────────
+node_modules/
+npm-debug.log*
+
+# ── Docker ───────────────────────────────────────────────────
+# (mantener Dockerfile y docker-compose.yml — NO ignorar)
+.dockerignore

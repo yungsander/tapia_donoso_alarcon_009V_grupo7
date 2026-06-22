@@ -1,4 +1,0 @@
--------------------------------------------------------------------------------
-Test set: impuestos.service.ImpuestoServiceTest
--------------------------------------------------------------------------------
-Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.494 s -- in impuestos.service.ImpuestoServiceTest
