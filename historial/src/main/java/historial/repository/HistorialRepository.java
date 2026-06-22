@@ -9,6 +9,6 @@ public interface HistorialRepository extends JpaRepository<HistorialModel, Long>
 
     List<HistorialModel> findByIdUsuario(Long IdUsuario);
 
-    List<HistorialModel> findByVigente(boolean Vigente);
+    List<HistorialModel> findByVigente(boolean vigente);
     
 }

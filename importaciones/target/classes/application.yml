@@ -2,6 +2,9 @@ spring:
     profiles:
         active: dev
 
-mercancia:
-  service:
-    url: http://ms-mercancias:8080
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka-server:8761/eureka/
+    register-with-eureka: true
+    fetch-registry: true

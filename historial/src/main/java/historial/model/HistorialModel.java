@@ -42,6 +42,6 @@ public class HistorialModel {
     private String estadoIngreso;
 
     @Column(name = "vigente", nullable = false)
-    private boolean Vigente;
+    private boolean vigente;
 
 }

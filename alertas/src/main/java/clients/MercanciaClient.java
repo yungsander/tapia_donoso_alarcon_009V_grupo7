@@ -11,8 +11,7 @@ import config.FeignConfig;
 import dtos.response.MercanciaResponse;
 
 @FeignClient(
-        name = "mercancia-client",
-        url = "${mercancia.service.url}",
+        name = "mercancias",
         configuration = FeignConfig.class
 )
 public interface MercanciaClient {
